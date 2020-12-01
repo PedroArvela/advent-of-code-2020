@@ -1,1 +1,1 @@
-from .solution import day1
+from .solution import *
