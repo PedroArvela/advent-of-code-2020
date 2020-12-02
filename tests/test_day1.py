@@ -1,4 +1,4 @@
-from day_1 import day1, day1_part2
+from day1 import day1, day1_part2
 
 EXPENSE = [
     1721,
