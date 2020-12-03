@@ -1,12 +1,12 @@
 from typing import Dict
 
-def day3(input: Dict[int, Dict[int, bool]]) -> int:
+def day3(input: Dict[int, Dict[int, bool]], h_slope, v_slope) -> int:
     position = (0,0)
     width = len(input[position[0]])
     count = 0
 
-    while (position[0] + 1) < len(input):
-        position = (position[0] + 1, (position[1] + 3) % width)
+    while (position[0] + v_slope) < len(input):
+        position = (position[0] + v_slope, (position[1] + h_slope) % width)
         if input[position[0]][position[1]]:
             count += 1
     

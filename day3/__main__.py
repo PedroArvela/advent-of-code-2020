@@ -5,4 +5,10 @@ if __name__ == "__main__":
         input = f.read()
         
         matrix = prepare_input(input)
-        print(day3(matrix))
+        result1_1 = day3(matrix, 1, 1)
+        result3_1 = day3(matrix, 3, 1)
+        result5_1 = day3(matrix, 5, 1)
+        result7_1 = day3(matrix, 7, 1)
+        result1_2 = day3(matrix, 1, 2)
+
+        print(result1_1 * result3_1 * result5_1 * result7_1 * result1_2)
