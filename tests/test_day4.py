@@ -1,4 +1,4 @@
-from day4.solution import day4, prepare_input
+from day4.solution import day4, day4_part2, prepare_input
 
 INPUT = """
 ecl:gry pid:860033327 eyr:2020 hcl:#fffffd
@@ -16,6 +16,45 @@ hcl:#cfa07d eyr:2025 pid:166559648
 iyr:2011 ecl:brn hgt:59in
 """
 
+ALL_INVALID = """
+eyr:1972 cid:100
+hcl:#18171d ecl:amb hgt:170 pid:186cm iyr:2018 byr:1926
+
+iyr:2019
+hcl:#602927 eyr:1967 hgt:170cm
+ecl:grn pid:012533040 byr:1946
+
+hcl:dab227 iyr:2012
+ecl:brn hgt:182cm pid:021572410 eyr:2020 byr:1992 cid:277
+
+hgt:59cm ecl:zzz
+eyr:2038 hcl:74454a iyr:2023
+pid:3556412378 byr:2007
+"""
+
+ALL_VALID = """
+pid:087499704 hgt:74in ecl:grn iyr:2012 eyr:2030 byr:1980
+hcl:#623a2f
+
+eyr:2029 ecl:blu cid:129 byr:1989
+iyr:2014 pid:896056539 hcl:#a97842 hgt:165cm
+
+hcl:#888785
+hgt:164cm byr:2001 iyr:2015 cid:88
+pid:545766238 ecl:hzl
+eyr:2022
+
+iyr:2010 hgt:158cm hcl:#b6652a ecl:blu byr:1944 eyr:2021 pid:093154719
+"""
+
 def test_day4():
     passports = prepare_input(INPUT)
     assert day4(passports) == 2
+
+def test_day4_part2_invalid():
+    passports = prepare_input(ALL_INVALID)
+    assert day4_part2(passports) == 0
+
+def test_day4_part2_valid():
+    passports = prepare_input(ALL_VALID)
+    assert day4_part2(passports) == 4
